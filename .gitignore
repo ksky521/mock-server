@@ -2,7 +2,7 @@
 logs
 *.log
 npm-debug.log*
-
+.tmp.config.json
 # Runtime data
 pids
 *.pid
