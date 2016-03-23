@@ -2,6 +2,7 @@
     "name": "mock-server",
     "version": "0.0.1",
     "dependencies": {
+        "minimatch": "3.0.0",
         "morgan": "^1.7.0",
         "ipv4": "~0.0.4",
         "mockjs": "~1.0.0",

@@ -7,6 +7,7 @@ global.express = require('express');
 var cons = require('consolidate');
 global.app = express();
 var server = require('http').Server(app);
+
 global.io = require('socket.io')(server, {
   log: false,
   origins: '*:*' //解决同源策略
