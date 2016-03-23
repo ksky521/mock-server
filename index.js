@@ -27,7 +27,7 @@ var config = {
   port: 8800,
   execDir: execDir,
   hosts: ['127.0.0.1', ipv4],
-  tmplDir: path.join(rootDir, '../vue-demo'),
+  tmplDir: path.join(assetDir, 'settings'),
   projectConfig: projectConfig
 };
 
