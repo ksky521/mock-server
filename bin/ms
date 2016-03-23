@@ -28,9 +28,9 @@ function server() {
     if (program.open) {
         var url = 'http://' + ipv4 + (port ? (':' + port) : port) + '/_/';
         if (process.platform === 'win32') {
-            exec('start' + url);
+            exec('start ' + url);
         } else {
-            exec('open' + url);
+            exec('open ' + url);
         }
     }
 }
