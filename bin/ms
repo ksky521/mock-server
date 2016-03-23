@@ -1,1 +1,36 @@
 #!/usr/bin/env node
+
+var ipv4 = require('ipv4');
+
+var program = require('commander');
+var exec = require('child_process').exec;
+var mockServer = require('../index');
+
+program
+    .version(require('../package.json').version, '-v --version')
+    .usage('<command> [options]')
+    .option('-p --port [port]', 'set server port')
+    .option('-o --open', 'open site in browser after server startup');
+
+
+program
+    .command('')
+    .description('startup server');
+
+program.parse(process.argv);
+
+if (!program.args.length) server();
+
+
+function server() {
+    var port = program.port || 8800;
+    mockServer(port);
+    if (program.open) {
+        var url = 'http://' + ipv4 + (port ? (':' + port) : port) + '/_/';
+        if (process.platform === 'win32') {
+            exec('start' + url);
+        } else {
+            exec('open' + url);
+        }
+    }
+}

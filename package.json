@@ -1,6 +1,25 @@
 {
     "name": "mock-server",
-    "version": "0.0.1",
+    "version": "1.0.0",
+    "site": "https://github.com/ksky521/mock-server",
+    "author": {
+        "name": "Theo Wang",
+        "email": "ksky521@gmail.com"
+    },
+    "bin": {
+        "mock-server": "bin/ms",
+        "ms": "bin/ms"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ksky521/mock-server"
+    },
+    "keywords": [
+        "mock-server",
+        "mockjs",
+        "proxy",
+        "local server"
+    ],
     "dependencies": {
         "minimatch": "3.0.0",
         "morgan": "^1.7.0",
