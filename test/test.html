@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试文件</title>
+</head>
+<body>
+    <h1>我是一个测试啊！注意数字变化：<span id="h"></span></h1>
+    <script>
+        var dom = document.getElementById('h');
+        dom.innerHTML = (Date.now()+'').slice(-3);
+    </script>
+</body>
+</html>
