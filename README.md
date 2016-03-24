@@ -1,7 +1,7 @@
 ## moserver
 > 本来用名mock-server发现被用了，果断改名moserver
 
-这是一个local static server
+这是一个local static server；其实一直用[F5](http://getf5.com)，mac下面启动啥的不太稳定，看官方建了好久的node-f5一直没写，然后结合现在想用的功能写了个
 
 * 支持livereload
 * mock文件自动输出，模拟接口数据
