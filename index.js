@@ -5,7 +5,6 @@ var path = require('path');
 var ipv4 = require('ipv4');
 global.express = require('express');
 var cons = require('consolidate');
-
 module.exports = function(port) {
   global.app = express();
 
