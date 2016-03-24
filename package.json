@@ -1,14 +1,14 @@
 {
-    "name": "mock-server",
+    "name": "wserver",
     "version": "1.0.0",
+    "description": "A light static server for your development.",
     "site": "https://github.com/ksky521/mock-server",
     "author": {
         "name": "Theo Wang",
         "email": "ksky521@gmail.com"
     },
     "bin": {
-        "mock-server": "bin/ms",
-        "ms": "bin/ms"
+        "wserver": "bin/ms"
     },
     "repository": {
         "type": "git",
@@ -18,7 +18,10 @@
         "mock-server",
         "mockjs",
         "proxy",
-        "local server"
+        "static server",
+        "local server",
+        "http",
+        "livereload"
     ],
     "dependencies": {
         "minimatch": "3.0.0",
