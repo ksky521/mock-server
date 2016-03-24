@@ -13,9 +13,6 @@ program
     .option('-o --open', 'open site in browser after server startup');
 
 
-program
-    .command('')
-    .description('startup server');
 
 program.parse(process.argv);
 

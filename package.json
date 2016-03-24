@@ -1,5 +1,5 @@
 {
-    "name": "wserver",
+    "name": "moserver",
     "version": "1.0.0",
     "description": "A light static server for your development.",
     "site": "https://github.com/ksky521/mock-server",
@@ -8,7 +8,8 @@
         "email": "ksky521@gmail.com"
     },
     "bin": {
-        "wserver": "bin/ms"
+        "moserver": "bin/ms",
+        "ms": "bin/ms"
     },
     "repository": {
         "type": "git",
@@ -24,6 +25,7 @@
         "livereload"
     ],
     "dependencies": {
+        "cheerio": "0.20.0",
         "minimatch": "3.0.0",
         "morgan": "^1.7.0",
         "ipv4": "~0.0.4",
