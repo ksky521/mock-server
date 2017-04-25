@@ -1,33 +1,40 @@
 #!/usr/bin/env node
 
-var ipv4 = require('ipv4');
+var ipv4 = require('ipv4')
 
-var program = require('commander');
-var exec = require('child_process').exec;
-var mockServer = require('../index');
+var program = require('commander')
+var exec = require('child_process').exec
+var mockServer = require('../index')
+var $ = require('./../lib/utils')
+var path = require('path')
 
 program
-    .version(require('../package.json').version, '-v --version')
-    .usage('<command> [options]')
-    .option('-p --port [port]', 'set server port')
-    .option('-o --open', 'open site in browser after server startup');
+  .version(require('../package.json').version, '-v --version')
+  .usage('<command> [options]')
+  .option('-p --port [port]', 'set server port')
+  .option('-o --open', 'open site in browser after server startup')
+program.command('clean')
+  .description('clean cache')
+  .action(function () {
+    var file_path = path.join($.getHomeDir(), '.mock-server-tmp/config.json')
+    var cache = require('./../lib/file-cache')(file_path)
+    cache.clear()
+    console.log('clean cache success!')
+  })
 
+program.parse(process.argv)
 
+if (!program.args.length) server()
 
-program.parse(process.argv);
-
-if (!program.args.length) server();
-
-
-function server() {
-    var port = program.port || 8800;
-    mockServer(port);
-    if (program.open) {
-        var url = 'http://' + ipv4 + (port ? (':' + port) : port) + '/_/';
-        if (process.platform === 'win32') {
-            exec('start ' + url);
-        } else {
-            exec('open ' + url);
-        }
+function server () {
+  var port = program.port || 8800
+  mockServer(port)
+  if (program.open) {
+    var url = 'http://' + ipv4 + (port ? (':' + port) : port) + '/_/'
+    if (process.platform === 'win32') {
+      exec('start ' + url)
+    } else {
+      exec('open ' + url)
     }
+  }
 }
